@@ -1,2 +1,64 @@
-<h1>Hello, World!</h1>
-<p>Welcome to my GitHub Pages site.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Profile</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            padding: 50px;
+        }
+        .terminal {
+            font-size: 24px;
+            white-space: pre-wrap;
+            overflow: hidden;
+            display: inline-block;
+            border-right: 2px solid #00ff00;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .glitch {
+            position: relative;
+            display: inline-block;
+            animation: glitch 1s infinite linear;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0, 0); }
+        }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="glitch">I am a Security Researcher & Bug Bounty Hunter from Myanmar</h1>
+    <p class="terminal" id="typing"></p>
+    <script>
+        const text = "This is my bug bounty reward websites:\n- <a href='http://files.im/' target='_blank'>files.im</a>\n- <a href='https://www.joyland.ai/' target='_blank'>joyland.ai</a>\n- <a href='https://chatfai.com/' target='_blank'>chatfai.com</a>\n- <a href='https://kera.ai/' target='_blank'>kera.ai</a>\n- <a href='https://seaart.ai/' target='_blank'>seaart.ai</a>";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 50);
+            }
+        }
+        window.onload = typeEffect;
+    </script>
+</body>
+</html>
